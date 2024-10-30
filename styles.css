@@ -1,77 +1,66 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    background-image: linear-gradient(to bottom right,#028391, #01204E);
+
+html {
+    background-image: linear-gradient(to bottom right, #028391, #01204E);
     font-size: 60%;
 }
 
-body{
+body {
     font-size: 1.5rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
     color: #fff;
     font-size: 1rem;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-header{
-    position: absolute;
+header {
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-}
-
-.main{
-    max-width: 125rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    justify-content: space-between;
-}
-.display{
-    height: 10rem;
     display: flex;
-    align-items: flex-end;
-    margin-top: 10rem;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+    justify-content: flex-end;
+    padding: 1rem;
 }
 
-.connect{
-    display:flex;
-    list-style:none;
-
+.logo {
+    width: 8rem;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
 }
 
-.connect_item{
+.logo:hover {
+    animation: bounce 2s infinite;
+}
+
+.connect {
+    display: flex;
+    list-style: none;
+}
+
+.connect_item {
     margin-right: 5rem;
     transition: opacity .3s;
 }
 
-.connect_item:hover{
+.connect_item:hover {
     opacity: 0.4;
 }
 
-.logo {
-    display:block;
-    position:relative;
-    width: 30rem;
-}
-
-.logo:hover{
-    animation: bounce 2s infinite;
-}
-
-.login_page{
+.login_page {
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -79,46 +68,48 @@ header{
     display: flex;
     align-items: center;
     z-index: 1;
-    margin-top: 10rem;
 }
 
-.text{
+.text {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    padding-left: 10rem;
 }
 
-.text_main{
+.text_main {
     max-width: 80%;
 }
 
-.heading{
+.heading {
     font-size: 3rem;
-    color:#F6DCAC;
+    color: #F6DCAC;
     margin-bottom: 1rem;
 }
 
-.heading:hover{
+.heading:hover {
     animation: fadeIn 2s infinite ease-in-out;
 }
-.slogan{
+
+.slogan {
     font-size: 1.5rem;
     color: #FEAE6F;
     margin-bottom: 2.5rem;
 }
 
-.ui input{
+.ui input {
     border: none;
     border-radius: 5rem;
     padding: 1.5rem;
     outline: none;
 }
 
-.input-box1{
+.input-box1 {
     margin-bottom: 1rem;
 }
-.btn{
-    background-image: linear-gradient(to right,#FEAE6F, #F6DCAC);
+
+.btn {
+    background-image: linear-gradient(to right, #FEAE6F, #F6DCAC);
     margin-top: 0.5rem;
     cursor: pointer;
     padding: 1.5rem;
@@ -131,89 +122,89 @@ header{
     animation: hue-shift 5s infinite alternate;
 }
 
-.btn:hover{
-    background-image: linear-gradient(to right, #F6DCAC,#FEAE6F);
-    color:#fff;
+.btn:hover {
+    background-image: linear-gradient(to right, #F6DCAC, #FEAE6F);
+    color: #fff;
 }
 
-.media{
+.media {
     margin-top: 2rem;
     display: flex;
 }
 
-.media-items{
+.media-items {
     display: flex;
-    border: 1px ;
     width: 3rem;
-    height:3rem;
+    height: 3rem;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-
 }
 
-.media-items:hover{
+.media-items:hover {
     background-image: linear-gradient(to right, #FEAE6F, #F6DCAC);
     color: #fff;
 }
 
-.decoration{
+.decoration {
     display: flex;
     position: relative;
     text-align: center;
+    left: -15rem;
 }
 
-.pics1{
+.pics1 {
     animation: move-up 4s infinite alternate;
+    left: -10rem;
 }
 
-.pics2{
+.pics2 {
     z-index: -1;
     position: absolute;
     top: 7rem;
-    left:10rem;
+    left: 40rem;
     animation: move-left 4s infinite alternate;
 }
 
-.pics3{
+.pics3 {
     position: absolute;
-    top:1rem;
-    left:-10rem;
+    top: 1rem;
+    left: 10rem;
     animation: move-right 4s infinite alternate;
 }
 
-@keyframes move-up{
-    from{
-        transform: translateY(0)
+@keyframes move-up {
+    from {
+        transform: translateY(0);
     }
-    to{
+    to {
         transform: translateY(5rem);
     }
 }
 
-@keyframes move-right{
-    from{
+@keyframes move-right {
+    from {
         transform: translateX(0);
     }
-    to{
+    to {
         transform: translateX(5rem);
     }
 }
 
-@keyframes move-left{
-    from{
+@keyframes move-left {
+    from {
         transform: translateX(0);
     }
-    to{
+    to {
         transform: translateX(-5rem);
     }
 }
 
-@keyframes hue-shift{
-    from{
+@keyframes hue-shift {
+    from {
         filter: hue-rotate(0deg);
     }
-    to{
+    to {
         filter: hue-rotate(360deg);
     }
 }
@@ -230,19 +221,107 @@ header{
     }
 }
 
-@media screen and (max-width:768px){
-    .display{
+@media screen and (max-width: 768px) {
+    .display {
         align-items: center;
     }
 
-    .content{
+    .connect {
+        display: none;
+    }
+    
+    .dropdown {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 90%;
+    }
+
+    .dropdown-btn {
+        background-color: transparent;
+        color: #ffffff;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #028391;
+        min-width: 12rem;
+        border-radius: 0.5rem;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: #028391;
+        padding: 1rem;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-btn:hover + .dropdown-content,
+    .dropdown-content:hover {
+        display: block;
+    }
+
+    .text {
         grid-template-columns: 1fr;
     }
     
-    .heading{
-        font-size: 2.5rem;
+    .text_main {
+        width: 100%;
     }
-    .slogan{
-        font-size: 1rem;
+
+    .heading {
+        font-size: 3.5rem;
+    }
+
+    .slogan {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .decoration {
+        order: 2;
+        margin: 2rem 0;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pics1 {
+        left: 60%;
+    }
+
+    .pics2 {
+        left: 50%;
+    }
+
+    .ui {
+        order: 3;
+    }
+
+    .login_page {
+        padding-top: 10rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .dropdown {
+        display: none;
+    }
+
+    .decoration {
+        justify-content: flex-end;
+    }
+
+    .text {
+        grid-template-columns: 1fr 1fr;
     }
 }
