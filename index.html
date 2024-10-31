@@ -51,9 +51,11 @@
                     </p>
                     
                     <div class="ui">
-                        <input type="text" class="input-box1" placeholder="Your email address">
-                        <input type="password" class="input-box2" placeholder="Your password">
-                        <button class="btn" onclick="showMessage()">Login</button>
+                        <form id="authform">
+                            <input type="text" class="input-box1" placeholder="Your email address">
+                            <input type="password" class="input-box2" placeholder="Your password">
+                            <button type="submit" class="btn">Login</button>
+                        </form>
                     </div>
                     
                     <div class="media">
@@ -85,6 +87,33 @@
         function showMessage() {
             alert('Website construction still underway');
         }
+
+        document.getElementById('authForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const email = this.email.value;
+        const password = this.password.value;
+
+        try {
+            const response = await fetch('http://localhost:3003/auth', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert(data.message);
+            } else {
+                alert(data.message || 'An error occurred!');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
     </script>
 </body>
 </html>
