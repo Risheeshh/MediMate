@@ -52,8 +52,8 @@
                     
                     <div class="ui">
                         <form id="authform">
-                            <input type="text" class="input-box1" placeholder="Your email address">
-                            <input type="password" class="input-box2" placeholder="Your password">
+                            <input type="text" class="input-box1" placeholder="Your email address" name="email" required>
+                            <input type="password" class="input-box2" placeholder="Your password" name="password" required>
                             <button type="submit" class="btn">Login</button>
                         </form>
                     </div>
@@ -88,32 +88,41 @@
             alert('Website construction still underway');
         }
 
-        document.getElementById('authForm').addEventListener('submit', async function (event) {
-        event.preventDefault();
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+            const dropdownContent = document.querySelector('.dropdown-content');
 
-        const email = this.email.value;
-        const password = this.password.value;
+            dropdownBtn.addEventListener('click', function () {
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
 
-        try {
-            const response = await fetch('http://localhost:3003/auth', {
+        function showMessage() {
+            alert('Website construction still underway');
+        }
+
+        // Add event listener for form submission
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const email = document.querySelector('.input-box1').value;
+            const password = document.querySelector('.input-box2').value;
+
+            fetch('http://localhost:3003/auth', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
                 alert(data.message);
-            } else {
-                alert(data.message || 'An error occurred!');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
     </script>
 </body>
 </html>

@@ -24,28 +24,31 @@ img {
     max-width: 100%;
 }
 
+/* Header styling */
 header {
-    position: relative;
+    position: relative; /* Keep header fixed at the top */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
+    justify-content: flex-end; /* Align content to the right */
+    padding: 1rem; /* Add padding for spacing */
 }
 
+/* Logo styling */
 .logo {
     width: 8rem;
     position: absolute;
     top: 1rem;
-    left: 2rem;
+    left: 2rem; /* Align to the top left */
 }
 
 .logo:hover {
     animation: bounce 2s infinite;
 }
 
+/* Connect menu styling */
 .connect {
     display: flex;
     list-style: none;
@@ -60,6 +63,7 @@ header {
     opacity: 0.4;
 }
 
+/* Login page styling */
 .login_page {
     width: 100%;
     min-height: 100vh;
@@ -146,6 +150,7 @@ header {
     color: #fff;
 }
 
+/* Decoration section */
 .decoration {
     display: flex;
     position: relative;
@@ -173,6 +178,7 @@ header {
     animation: move-right 4s infinite alternate;
 }
 
+/* Keyframes for animations */
 @keyframes move-up {
     from {
         transform: translateY(0);
@@ -221,13 +227,15 @@ header {
     }
 }
 
+/* Responsive styling for smaller screens */
 @media screen and (max-width: 768px) {
     .display {
         align-items: center;
     }
 
+    /* Dropdown menu styling for smaller screens */
     .connect {
-        display: none;
+        display: none; /* Hide original nav links */
     }
     
     .dropdown {
@@ -238,24 +246,24 @@ header {
     }
 
     .dropdown-btn {
-        background-color: transparent;
-        color: #ffffff;
-        border: none;
-        padding: 0.5rem 1rem;
-        font-size: 3rem;
-        cursor: pointer;
+        background-color: transparent; /* Make background transparent */
+        color: #ffffff; /* Change text color to white for better visibility */
+        border: none; /* Remove default border */
+        padding: 0.5rem 1rem; /* Add some padding */
+        font-size: 3rem; /* Adjust font size if needed */
+        cursor: pointer; /* Change cursor on hover */
     }
     
     .dropdown-content {
-        display: none;
+        display: none; /* Hide dropdown by default */
         position: absolute;
-        top: 4rem;
-        right: 0;
-        background-color: rgba(255, 255, 255, 0.9);
+        top: 4rem; /* Adjusted to align correctly below the button */
+        right: 0; /* Align right */
+        background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
         color: #028391;
         min-width: 12rem;
         border-radius: 0.5rem;
-        z-index: 1;
+        z-index: 1; /* Ensure it appears above other content */
     }
 
     .dropdown-content a {
@@ -267,11 +275,12 @@ header {
 
     .dropdown-btn:hover + .dropdown-content,
     .dropdown-content:hover {
-        display: block;
+        display: block; /* Show dropdown on hover */
     }
 
+    /* Adjust content layout and sizing */
     .text {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack items vertically */
     }
     
     .text_main {
@@ -307,21 +316,23 @@ header {
         order: 3;
     }
 
+    /* Ensure main content maintains padding from the fixed header */
     .login_page {
-        padding-top: 10rem;
+        padding-top: 10rem; /* Increase padding for smaller screens */
     }
 }
 
+/* Hide dropdown for larger screens */
 @media screen and (min-width: 769px) {
     .dropdown {
-        display: none;
+        display: none; /* Hide dropdown menu */
     }
 
     .decoration {
-        justify-content: flex-end;
+        justify-content: flex-end; /* Keep decoration images on the right */
     }
 
     .text {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
     }
 }
