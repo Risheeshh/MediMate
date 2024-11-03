@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medimate</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/3d41ab5f62.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="display">
+                <a href="index.html" class="logo">
+                    <img src="images/MediMate_transparent.png" alt="Medimate Logo" width="80%" height="80%"/>
+                </a>
+                
+                <ul class="connect">
+                    <li class="connect_item">
+                        <a href="https://1drv.ms/p/s!Aur_-_2AOiwOjzOE4POEVGG7LW7e?e=6ykzsw">About</a>
+                    </li>
+                    <li class="connect_item">
+                        <a href="index.html" onclick="showMessage()">Rate Us</a>
+                    </li>
+                    <li class="connect_item">
+                        <a href="images/contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="dropdown">
+                    <button class="dropdown-btn"><i class="fa fa-bars"></i></button>
+                    <div class="dropdown-content">
+                        <a href="https://1drv.ms/p/s!Aur_-_2AOiwOjzOE4POEVGG7LW7e?e=6ykzsw">About</a>
+                        <a href="index.html" onclick="showMessage()">Rate Us</a>
+                        <a href="images/contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="login_page">
+        <div class="main">
+            <div class="text">
+                <div class="text_main" style="margin-top: -20px;">
+                    <h1 class="heading">
+                        Putting patient satisfaction at the helm of healthcare experience
+                    </h1>
+                    <p class="slogan">
+                        The interaction between a patient and the medical team is essential to ensure optimal patient outcomes. Sign up now
+                    </p>
+                    
+                    <div class="ui">
+                        <form id="authform">
+                            <input type="text" class="input-box1" placeholder="Your email address" name="email" required>
+                            <input type="password" class="input-box2" placeholder="Your password" name="password" required>
+                            <button type="submit" class="btn">Login</button>
+                        </form>
+                    </div>
+                    
+                    <div class="media">
+                        <a href="index.html" class="media-items" onclick="showMessage()"><i class="fa-brands fa-instagram" style="color: #fff;"></i></a>
+                        <a href="index.html" class="media-items" onclick="showMessage()"><i class="fa-brands fa-x-twitter" style="color: #fff;"></i></a>
+                        <a href="index.html" class="media-items" onclick="showMessage()"><i class="fa-brands fa-linkedin" style="color: #fff;"></i></a>
+                    </div>
+                </div>
+
+                <div class="decoration">
+                    <img class="pics1" src="images/Picture1.png" alt="Decorative Image 1" height="60%" width="60%">
+                    <img class="pics2" src="images/Picture2.png" alt="Decorative Image 2" height="60%" width="60%">
+                    <img class="pics3" src="images/Picture3.png" alt="Decorative Image 3" height="60%" width="60%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+            const dropdownContent = document.querySelector('.dropdown-content');
+
+            dropdownBtn.addEventListener('click', function () {
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        function showMessage() {
+            alert('Website construction still underway');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+            const dropdownContent = document.querySelector('.dropdown-content');
+
+            dropdownBtn.addEventListener('click', function () {
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        function showMessage() {
+            alert('Website construction still underway');
+        }
+
+        // Add event listener for form submission
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const email = document.querySelector('.input-box1').value;
+            const password = document.querySelector('.input-box2').value;
+
+            fetch('http://localhost:3003/auth', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
