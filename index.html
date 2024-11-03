@@ -101,14 +101,14 @@
             alert('Website construction still underway');
         }
 
-        // Add event listener for form submission
+        // Form submission
         document.querySelector('form').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent default form submission
             
             const email = document.querySelector('.input-box1').value;
             const password = document.querySelector('.input-box2').value;
 
-            fetch('http://localhost:3003/auth', {
+            fetch('https://medimate-2-neyh.onrender.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
