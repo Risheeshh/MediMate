@@ -1,28 +1,23 @@
 const express = require('express');
 const fs = require('fs');
-const cors = require('cors'); // Import CORS
+const cors = require('cors');
 
 const app = express();
-const PORT = 3003;
-
-app.use(cors()); // Enable CORS for all routes
-app.use(express.json()); // Middleware to parse JSON bodies
+app.use(cors());
+app.use(express.json());
 
 const getUsers = () => {
-    // Read the users from users.json file
     const data = fs.readFileSync('users.json', 'utf-8');
     return JSON.parse(data);
 };
 
 const saveUser = (user) => {
-    // Save a new user to users.json file
     const users = getUsers();
     users.push(user);
     fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
 };
 
-// Authentication endpoint
-app.post('/auth', (req, res) => {
+app.post('/api/auth', (req, res) => {
     const { email, password } = req.body;
     const users = getUsers();
 
@@ -37,7 +32,4 @@ app.post('/auth', (req, res) => {
     }
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
