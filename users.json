@@ -6,5 +6,29 @@
   {
     "email": "quietrishush@gmail.com",
     "password": "12345"
+  },
+  {
+    "email": "example1@gmail.com",
+    "password": "password1"
+  },
+  {
+    "email": "example2@yahoo.com",
+    "password": "password2"
+  },
+  {
+    "email": "example3@outlook.com",
+    "password": "password3"
+  },
+  {
+    "email": "user1@example.com",
+    "password": "userpass1"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "userpass2"
+  },
+  {
+    "email": "rayrishika07@gmail.com",
+    "password": "toko"
   }
 ]
